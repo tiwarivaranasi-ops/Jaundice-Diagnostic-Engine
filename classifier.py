@@ -6,6 +6,7 @@ Generates biochemical findings from laboratory data.
 from constants import *
 from finding_ids import *
 from finding_manager import FindingManager
+from symptom_scorer import SymptomScorer
 
 
 class Classifier:
@@ -14,6 +15,11 @@ class Classifier:
 
         self.classify_bilirubin(patient)
         self.classify_pattern(patient)
+
+        SymptomScorer().score(patient)
+        
+        
+        
 
     # -----------------------------------
     # C001
@@ -61,13 +67,15 @@ class Classifier:
 
             FindingManager.add(patient, F005)
 
-            return
+            
 
         # Hepatocellular Pattern
 
         if (
-            patient.ast > AST_ULN or
-            patient.alt > ALT_ULN
+            patient.ast >= AST_ULN * HEPATOCELLULAR_AST_MULTIPLE
+            or
+            patient.alt >= ALT_ULN * HEPATOCELLULAR_ALT_MULTIPLE
+        
         ):
 
             FindingManager.add(patient, F004)

@@ -20,17 +20,13 @@ class Patient:
         # History
         # -------------------------
 
-        self.fever = False
-        self.abdominal_pain = False
+        self.prodromal_symptoms = False
         self.pruritus = False
         self.dark_urine = False
         self.pale_stools = False
-        self.nausea = False
-        self.vomiting = False
         self.alcohol_history = False
-        self.drug_history = False
-        self.weight_loss = False
-        self.family_history = False
+        self.hepatocellular_score = 0
+        self.cholestatic_score = 0
 
 
         # -------------------------

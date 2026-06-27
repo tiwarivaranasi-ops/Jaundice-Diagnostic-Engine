@@ -13,12 +13,18 @@ patient = Patient()
 patient.age = 25
 patient.sex = "Male"
 
-patient.total_bilirubin = 12.0
-patient.direct_bilirubin = 8.0
+patient.total_bilirubin = 8.0
+patient.direct_bilirubin = 4.0
 
-patient.ast = 120
-patient.alt = 140
-patient.alp = 900
+patient.ast = 500
+patient.alt = 500
+patient.alp = 500
+
+patient.prodromal_symptoms = True
+patient.alcohol_history = True
+patient.pruritus = True
+patient.dark_urine = True
+patient.pale_stools = True
 
 # ----------------------------
 # Run the classifier
