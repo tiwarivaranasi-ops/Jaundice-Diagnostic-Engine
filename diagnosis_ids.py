@@ -2,4 +2,5 @@
 Diagnosis IDs
 """
 
-D101 = "Acute Viral Hepatitis"
+D101 = "Acute Hepatocellular Necrosis"
+D102 = "Cholestatic Jaundice"
