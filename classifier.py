@@ -6,17 +6,34 @@ Generates biochemical findings from laboratory data.
 from constants import *
 from finding_ids import *
 from finding_manager import FindingManager
-from symptom_scorer import SymptomScorer
+from r_value_calculator import RValueCalculator
+
 
 
 class Classifier:
 
-    def classify(self, patient):
+ def classify(self, patient):
+    self.classify_bilirubin(patient)
+    r_value = RValueCalculator.calculate(patient)
+    if r_value is None:
+     return
+    self.classify_pattern(patient, r_value)
+ def classify_pattern(self, patient, r_value):
 
-        self.classify_bilirubin(patient)
-        self.classify_pattern(patient)
+        
+         if r_value >= 5:
+          FindingManager.add(patient, F004)
 
-        SymptomScorer().score(patient)
+         elif r_value <= 2:
+          FindingManager.add(patient, F005)
+
+         else:
+          FindingManager.add(patient, F006)
+
+         
+        
+
+        
         
         
         
@@ -26,7 +43,7 @@ class Classifier:
     # Direct / Indirect Hyperbilirubinemia
     # -----------------------------------
 
-    def classify_bilirubin(self, patient):
+ def classify_bilirubin(self, patient):
 
         if patient.total_bilirubin is None:
             return
@@ -52,7 +69,7 @@ class Classifier:
     # Pattern Classification
     # -----------------------------------
 
-    def classify_pattern(self, patient):
+def classify_pattern(self, patient):
 
         if (
             patient.ast is None or

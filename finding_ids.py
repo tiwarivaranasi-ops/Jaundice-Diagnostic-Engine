@@ -16,17 +16,19 @@ F002 = "Indirect Hyperbilirubinemia"
 # Liver Pattern Findings
 # -------------------------
 
-F003 = "Isolated Hyperbilirubinemia"
+F003 = "Isolated Direct Hyperbilirubinemia"
 F004 = "Hepatocellular Pattern"
 F005 = "Cholestatic Pattern"
+F006 = "Mixed Pattern"
+F007 = "Isolated Indirect Hyperbilirubinemia"
 
 
 # -------------------------
-# Hematology Findings
+
 # -------------------------
 
-F006 = "Anemia"
-F007 = "Hemolysis on Peripheral Blood Smear"
+
+
 
 
 # -------------------------

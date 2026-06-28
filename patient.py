@@ -25,8 +25,8 @@ class Patient:
         self.dark_urine = False
         self.pale_stools = False
         self.alcohol_history = False
-        self.hepatocellular_score = 0
-        self.cholestatic_score = 0
+        
+        
 
 
         # -------------------------
