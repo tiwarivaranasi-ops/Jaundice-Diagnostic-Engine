@@ -50,7 +50,8 @@ class Classifier:
 
         if patient.direct_bilirubin is None:
             return
-
+        if patient.total_bilirubin <= 1.3:
+            return
         direct_percent = (
             patient.direct_bilirubin /
             patient.total_bilirubin

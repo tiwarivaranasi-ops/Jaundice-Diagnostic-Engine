@@ -16,12 +16,12 @@ patient = Patient()
 patient.age = 25
 patient.sex = "Male"
 
-patient.total_bilirubin = 5.0
-patient.direct_bilirubin = 0.5
+patient.total_bilirubin = 1.0
+patient.direct_bilirubin = 0.3
 
-patient.ast = 40
-patient.alt = 60
-patient.alp = 60
+patient.ast = 180
+patient.alt = 220
+patient.alp = 140
 
 patient.prodromal_symptoms = True
 patient.alcohol_history = True
@@ -48,11 +48,14 @@ guidance.generate(patient)
 FindingManager.display(patient)
 
 print("\n===== PROVISIONAL DIAGNOSIS =====")
-print(patient.findings)
-print(type(patient.provisional_diagnosis))
-print(repr(patient.provisional_diagnosis))
-print("\n===== PROBABLE DISEASES =====")
 
-for disease, test in patient.probable_diseases:
-    print(f"- {disease}")
-    print(f"  Clinching test: {test}")
+
+
+if patient.provisional_diagnosis is None:
+    print("Hyperbilirubinemia absent. Investigate for other conditions.")
+else:
+    print("\n===== PROBABLE DISEASES =====")
+
+    for disease, test in patient.probable_diseases:
+     print(f"- {disease}")
+     print(f"  Clinching test: {test}")

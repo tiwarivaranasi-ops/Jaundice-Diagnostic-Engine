@@ -9,10 +9,10 @@ DIRECT_BILIRUBIN_PERCENT = 15
 
 # Liver enzymes
 
-AST_ULN = 40
-ALT_ULN = 40
-ALP_ULN = 120
-GGT_ULN = 60
+AST_ULN = 55
+ALT_ULN = 55
+ALP_ULN = 180
+GGT_ULN = 70
 
 
 # Pattern definition
