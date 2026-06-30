@@ -6,6 +6,9 @@ The engine applies a structured, rule-based diagnostic approach using patient hi
 
 > **This software is intended as a clinical decision-support and educational tool. It does not replace physician judgment.**
 
+## Screenshot
+![Jaundice Diagnostic Engine](images/screenshot.jpeg)
+
 ---
 
 ## Features
