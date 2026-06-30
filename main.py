@@ -16,12 +16,12 @@ patient = Patient()
 patient.age = 25
 patient.sex = "Male"
 
-patient.total_bilirubin = 1.0
-patient.direct_bilirubin = 0.3
+patient.total_bilirubin = 8.0
+patient.direct_bilirubin = 2.0
 
-patient.ast = 180
-patient.alt = 220
-patient.alp = 140
+patient.ast = 100
+patient.alt = 100
+patient.alp = 800
 
 patient.prodromal_symptoms = True
 patient.alcohol_history = True
@@ -49,7 +49,7 @@ FindingManager.display(patient)
 
 print("\n===== PROVISIONAL DIAGNOSIS =====")
 
-
+print(patient.provisional_diagnosis)
 
 if patient.provisional_diagnosis is None:
     print("Hyperbilirubinemia absent. Investigate for other conditions.")
